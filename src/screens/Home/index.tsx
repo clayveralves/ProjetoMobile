@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { 
-  SafeAreaView, 
-  Text, 
-  TextInput, 
+import {
+  SafeAreaView,
+  Text,
+  TextInput,
   TouchableOpacity,
   ScrollView,
-  FlatList 
+  FlatList
 } from 'react-native';
 
 import { Button } from '../../components/Button';
+import { TaskCard } from '../../components/TaskCard';
 import { styles } from './styles';
 
 interface TaskData {
@@ -40,20 +41,20 @@ export function Home() {
       <Text style={styles.text}>
         Ola, Clayver!
       </Text>
-      <TextInput 
+      <TextInput
         style={styles.input}
         placeholder="Digite a tarefa"
         placeholderTextColor="#555"
         onChangeText={setNewTask}
       />
 
-      <Button 
+      <Button
         onPress={handleAddNewTask}
         activeOpacity={0.7}
         title="Adicionar tarefa"
       />
 
-      <Text style={ [styles.text, { marginTop: 20}] }>
+      <Text style={[styles.text, { marginTop: 20 }]}>
         Minhas Tarefas
       </Text>
 
@@ -61,14 +62,10 @@ export function Home() {
         data={tasks}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity 
-            style={styles.buttonTask}
+          <TaskCard
+            title={item.name}
             onPress={() => handleRemoveTask(item.id)}
-          >
-            <Text style={styles.textTask}>
-              {item.name}
-            </Text>
-          </TouchableOpacity>
+          />
         )
         }
       />
