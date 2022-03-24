@@ -4,8 +4,8 @@ import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
 import { styles } from './styles';
 
 interface TaskCardProps extends TouchableOpacityProps {
-    title: string,
-    onPress: () => void
+    title: string;
+    onPress: () => void;
 }
 
 export function TaskCard({ title, onPress }: TaskCardProps) {
