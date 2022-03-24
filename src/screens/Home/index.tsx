@@ -8,8 +8,8 @@ import {
   FlatList
 } from 'react-native';
 
-import { Button } from '../../components/Button';
 import { TaskCard } from '../../components/TaskCard';
+import { Button } from '../../components/Button';
 import { styles } from './styles';
 
 interface TaskData {
@@ -72,7 +72,3 @@ export function Home() {
     </SafeAreaView>
   );
 }
-
-// SafeAreaView: componente que evita que, no caso do ios,
-// o conteúdo da tela fique por cima da barra de status.
-// No Android, SafeAreaView não tem efeito.
